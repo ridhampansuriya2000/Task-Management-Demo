@@ -26,11 +26,8 @@ const ListBlock: React.FC<ListBlockProps> = ({
 
     const dispatch = useDispatch();
 
-    React.useEffect(()=>{
-        // dispatch(updateList({list : {fdfds:"dsasd"}}));
-    },[])
     // pass a function to map
-    const tasks = React.useMemo(()=>taskList.map((taskId, idx) => (
+    const tasks = React.useMemo(()=>taskList?.map((taskId, idx) => (
         <Task
             key={taskId}
             draggableId={taskId}

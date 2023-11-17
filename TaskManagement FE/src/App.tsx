@@ -8,22 +8,15 @@ import { theme } from "./MUI";
 import { Provider } from "react-redux";
 import store from "./Redux/index";
 
-import { AuthContextProvider } from "./Context/AuthContext";
-import { ChatContextProvider } from "./Context/ChatContext";
-
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <Provider store={store}>
-        <AuthContextProvider>
-          <ChatContextProvider>
-            <StyledEngineProvider injectFirst={true}>
-              <BrowserRouter>
-                <Router />
-              </BrowserRouter>
-            </StyledEngineProvider>
-          </ChatContextProvider>
-        </AuthContextProvider>
+        <StyledEngineProvider injectFirst={true}>
+          <BrowserRouter>
+            <Router />
+          </BrowserRouter>
+        </StyledEngineProvider>
       </Provider>
     </ThemeProvider>
   );

@@ -32,11 +32,6 @@ const Modal1 = ({
     // CustomModal component styling
     const CustomModal = styled(Modal)(({ theme }) => ({}));
 
-    const [formValue, setFormValue] = useState({
-        name: '',
-        type: '',
-    })
-
     return (
         <>
             <CustomModal open={true} onSubmit={onSubmit} {...props}>

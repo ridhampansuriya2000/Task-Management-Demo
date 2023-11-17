@@ -4,6 +4,7 @@ export interface ITask extends Document {
     title: string;
     description: string;
     taskStatus : Types.ObjectId;
+    taskIndex : number | any;
     createDate: Date;
 }
 
@@ -11,6 +12,7 @@ const taskSchema = new Schema({
     title: { type: String, required: true },
     description: { type: String },
     priority: { type: String},
+    taskIndex: { type: Number},
     taskStatus: { type: Schema.Types.ObjectId},
     createDate: { type: Date, default: Date.now },
 });

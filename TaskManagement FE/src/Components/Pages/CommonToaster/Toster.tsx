@@ -12,14 +12,6 @@ const Toster = () => {
     toaster : state?.commonToaster?.toaster,
   }));
 
-  // React.useEffect(()=>{
-  //   if(toaster)
-  //   setToasterValue(()=>({
-  //   toasterMsg:message,
-  //   variant: type,
-  //   isOpen: true,
-  //   }))
-  // },[toaster])
 
   return (
     <>

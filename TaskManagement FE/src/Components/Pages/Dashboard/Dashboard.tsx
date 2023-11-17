@@ -2,13 +2,17 @@ import React, {useState} from 'react';
 import style from '../Dashboard/dash.module.css';
 import Board from "./Board/Board";
 import {addTask, updateList} from "../../../Redux/Actions/Dashboard";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import Header from "./Header/Hader";
 import Modal from "./Model/Modal";
 
 const Dashboard = () => {
 
     const dispatch = useDispatch();
+    const { task, list } = useSelector((state: any) =>({
+        task : state.task,
+        list : state.list
+    }));
 
   const [modalOpen, setModalOpen] = useState({isOpen : false, id:''});
 

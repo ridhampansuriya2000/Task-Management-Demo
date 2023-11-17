@@ -117,9 +117,9 @@ const Board: React.FC<BoardProps> = ({setModalOpen}) => {
             key={listBlock}
             draggableId={listBlock}
             index={idx}
-            title={list[listBlock].title}
+            title={list[listBlock]?.title}
             task={task}
-            taskList={list[listBlock].taskList}
+            taskList={list[listBlock]?.taskList}
             taskOnClick={(id,taskDetails) => taskOnClick(id,taskDetails)}
         />
     )),[JSON.stringify({boardNames : boardState.boardList, task, list})]);

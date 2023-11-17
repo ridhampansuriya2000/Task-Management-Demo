@@ -45,11 +45,13 @@ export const createTask = async (req: Request, res: Response) => {
             let rendom = Math.random();
             return (rendom < 0.33) ? 'Low' : (rendom < 0.66 && rendom >= 0.33) ? 'Mid' : 'High';
         };
+        const taskCount = await Task.countDocuments({ taskStatus: "6554f72884ac799a1033184b" });
         return await Task.create({
             title,
             description,
             priority: getRendomPriority(),
-            taskStatus: '6554f72884ac799a1033184b'
+            taskStatus: '6554f72884ac799a1033184b',
+            taskIndex : taskCount
         });
     });
 };

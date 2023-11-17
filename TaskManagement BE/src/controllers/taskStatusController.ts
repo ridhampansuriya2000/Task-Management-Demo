@@ -45,7 +45,7 @@ export const getAllTaskSatutses = async (_req: Request, res: Response) => {
     }
 };
 
-export const  getTaskStatusQuery =[
+export const  getTaskStatusQuery : any=[
     {
         $lookup: {
             from: 'tasks', // Replace with the actual name of your tasks collection

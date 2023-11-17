@@ -7,8 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { LoginApi } from "../../../Redux/Actions";
 import { Grid } from "@mui/material";
 import TextFields from "../../Views/Textfield/TextFields";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../../Firebase/firebase";
 
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -106,12 +104,6 @@ function Login() {
       const email = obj.email;
       const password = obj.password;
 
-      try {
-        await signInWithEmailAndPassword(auth, email, password);
-        // navigate("/chat");
-      } catch (err) {
-        console.log(err);
-      }
       
       await dispatch(LoginApi({ email: obj.email, password: obj.password }));
       

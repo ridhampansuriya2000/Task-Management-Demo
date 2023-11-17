@@ -20,12 +20,14 @@ export const updateList = ({_id, source, destination, task} : any) => {
             const copyState = structuredClone(state);
             return (source && destination) ? {
                 ...copyState,
-                task : {...copyState.task, [_id] : {...copyState.task[_id],...task}/*...response.tasks*/},
-                list: {
-                    ...copyState.list,
-                    [source.droppableId]: { ...copyState.list[source.droppableId], taskList : [...copyState.list[source.droppableId].taskList.filter((id : any) => id !== _id)]},
-                    [destination.droppableId]: {...copyState.list[destination.droppableId], taskList : [...copyState.list[destination.droppableId].taskList]}
-                }
+                task : {...response.tasks},
+                list : {...response.taskStatuses}
+                // task : {...copyState.task, [_id] : {...copyState.task[_id],...task}/*...response.tasks*/},
+                // list: {
+                //     ...copyState.list,
+                //     [source.droppableId]: { ...copyState.list[source.droppableId], taskList : [...copyState.list[source.droppableId].taskList.filter((id : any) => id !== _id)]},
+                //     [destination.droppableId]: {...copyState.list[destination.droppableId], taskList : [...copyState.list[destination.droppableId].taskList]}
+                // }
             } :
                 {
                     ...copyState,
