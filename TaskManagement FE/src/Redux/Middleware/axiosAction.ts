@@ -26,7 +26,7 @@ interface IAxiosProps {
 
 const getAxiosProps = ({
                            method,
-                           baseURL = /*process.env.REACT_APP_BACKEND_ORIGIN ||*/ "baseURLhttps://task-management-demo-ruddy.vercel.app/",
+                           baseURL = /*process.env.REACT_APP_BACKEND_ORIGIN ||*/ "https://task-management-demo-ruddy.vercel.app",
                            url,
                            payload,
                            header = {}
